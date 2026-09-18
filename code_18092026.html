@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Toàn Thông Tin Trên Mạng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <span class="back-arrow">←</span>
+            <span class="app-title">Mạng Xã Hội</span>
+            <span class="header-icons">🔍 💬</span>
+        </header>
+
+        <div class="post-wrapper">
+            <div class="post-card">
+                <div class="post-top">
+                    <div class="user-avatar">👤</div>
+                    <div class="user-info">
+                        <h4 class="user-name">Người Dùng Ẩn Danh</h4>
+                        <p class="post-time">2 giờ trước · từ điện thoại di động</p>
+                    </div>
+                    <button class="more-options">⋯</button>
+                </div>
+
+                <div class="post-content">
+                    <p id="post-text">
+                        🚨 <strong>TẤT CẢ NHÀ TRƯỜNG ĐỀU KHÔNG QUAN TÂM ĐẾN HỌC SINH!</strong><br><br>
+                        Hôm nay tôi bị ốm mà giáo viên không cho nghỉ, còn mắng tôi nữa. Tất cả giáo viên đều chỉ thích học sinh giỏi, không bao giờ quan tâm đến những học sinh bình thường. Đừng bao giờ tin vào những gì nhà trường nói! 😡<br><br>
+                        <em>#CảnhBáo #ThựcTrạng #ChiaSẻNgay</em>
+                    </p>
+                </div>
+
+                <div class="post-image-area">
+                    🖼️ [Ảnh minh họa — không liên quan đến nội dung]
+                </div>
+
+                <div class="post-numbers">
+                    <span id="like-total">❤️ 1.562 Thích</span>
+                    <span id="comment-total">💬 428 Bình luận</span>
+                    <span>🔄 756 Chia sẻ</span>
+                </div>
+
+                <div class="interaction-row">
+                    <button id="like-button" class="interact-btn">
+                        <span class="icon">❤️</span>
+                        <span class="text-btn">Thích</span>
+                    </button>
+                    <button id="comment-button" class="interact-btn">
+                        <span class="icon">💬</span>
+                        <span class="text-btn">Bình luận</span>
+                    </button>
+                    <button id="share-button" class="interact-btn">
+                        <span class="icon">🔄</span>
+                        <span class="text-btn">Chia sẻ</span>
+                    </button>
+                    <button id="report-button" class="interact-btn report-style">
+                        <span class="icon">🚫</span>
+                        <span class="text-btn">Báo cáo</span>
+                    </button>
+                </div>
+
+                <div id="comment-box" class="comment-section hidden">
+                    <div class="write-comment">
+                        <input type="text" id="input-comment" placeholder="Viết bình luận...">
+                        <button id="send-btn">Gửi</button>
+                    </div>
+                    <div id="comments-display">
+                        <div class="comment others">
+                            <strong>An_05:</strong> Tôi cũng từng bị như vậy, nhà trường thật không công bằng!
+                        </div>
+                        <div class="comment others">
+                            <strong>Minh_9A:</strong> Chỉ là trường hợp của bạn thôi mà, sao nói tất cả đều vậy?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="lesson-popup" class="popup-overlay hidden">
+            <div class="popup-content">
+                <div class="popup-icon">💡</div>
+                <h3>THÔNG TIN NÀY KHÔNG CHÍNH XÁC!</h3>
+                <p>Bài viết chỉ dựa trên trải nghiệm cá nhân nhưng đã <strong>kết luận chung hóa</strong> cho tất cả mọi người — đây là cách lan truyền thông tin sai lệch rất phổ biến.</p>
+                <ul class="guide-list">
+                    <li>✅ Kiểm chứng thông tin từ nguồn chính thống</li>
+                    <li>✅ Không vội vàng chia sẻ khi chưa xác minh</li>
+                    <li>✅ Tự hỏi: "Điều này có đúng với mọi trường hợp không?"</li>
+                    <li>✅ Báo cáo những thông tin gây chia rẽ, sai lệch</li>
+                </ul>
+                <button id="close-lesson" class="confirm-btn">Đã Hiểu ✅</button>
+            </div>
+        </div>
+
+        <div id="share-alert" class="popup-overlay hidden">
+            <div class="popup-content">
+                <div class="popup-icon">⚠️</div>
+                <h3>DỪNG LẠI TRƯỚC KHI CHIA SẺ!</h3>
+                <p>Bạn có chắc chắn thông tin này là <strong>chính xác</strong> và <strong>không gây hại</strong> cho người khác không?</p>
+                <p class="highlight-text">💡 Một chia sẻ thiếu suy nghĩ có thể lan truyền tin giả cho hàng trăm người!</p>
+                <div class="two-buttons">
+                    <button id="cancel-share" class="cancel-btn">Hủy Bỏ</button>
+                    <button id="confirm-share" class="share-anyway">Vẫn Chia Sẻ</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="report-done" class="popup-overlay hidden">
+            <div class="popup-content">
+                <div class="popup-icon">✅</div>
+                <h3>BÁO CÁO THÀNH CÔNG!</h3>
+                <p>Cảm ơn bạn đã hành động đúng! Bài viết có dấu hiệu lan truyền thông tin sai lệch và sẽ được xem xét xử lý.</p>
+                <p class="highlight-text">💡 Mỗi hành động nhỏ đều góp phần làm mạng xã hội trong sạch hơn!</p>
+                <button id="close-report" class="confirm-btn">Tiếp Tục ✅</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
